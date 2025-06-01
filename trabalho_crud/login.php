@@ -19,8 +19,8 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $senha = $_POST['senha'];
         $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email AND senha = :senha");
         
-        $stmt->bindparam(':email', $email);
-        $stmt->bindparam(':senha', $senha); 
+        $stmt->bindvalue(':email', $email);
+        $stmt->bindvalue(':senha', $senha); 
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
