@@ -2,6 +2,7 @@
 include ("protecao.php");
 include ("conexao.php");
 
+$id = $_SESSION['id'];
 
 $stmt = $conexao->prepare("SELECT * FROM cadastro WHERE id = ?");
 $stmt->execute([$id]);
@@ -34,30 +35,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="editar">
 
-<section class="navbar">
-    <a class="link" href="painel.php">Início</a>
-    <a class="link" href="imoveis.php">Compra</a>
-    <a class="link" href="anuncio.php">Anúncio</a>
-    <a class="link" href="busca.php">Buscar imóveis</a>
-    <a class="link" href="conta.php">Conta</a>
-    <img class="menu" src="assets/menu" alt="Menu">
-</section>
+    <section class="navbar">
+        <a class="link" href="painel.php">Início</a>
+        <a class="link" href="imoveis.php">Compra</a>
+        <a class="link" href="anuncio.php">Anúncio</a>
+        <a class="link" href="busca.php">Buscar imóveis</a>
+        <a class="link" href="conta.php">Conta</a>
+        <img class="menu" src="assets/menu" alt="Menu">
+    </section>
 
-<div class = "main-editar">
+    <div class = "main-editar">
 
-<form class="form-editar" method="post">
-    <label>Nome</label>
-    <input class="input-editar" type="text" name="nome" value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
+    <form class="form-editar" method="post">
+        <label>Nome</label>
+        <input class="input-editar" type="text" name="nome" value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
 
-    <label>Email</label>
-    <input class="input-editar" type="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>"><br>
+        <label>Email</label>
+        <input class="input-editar" type="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>"><br>
 
-    <label>Senha</label>
-    <input class="input-editar" type="int" name="senha" value="<?= htmlspecialchars($usuario['senha']) ?>"><br>
+        <label>Senha</label>
+        <input class="input-editar" type="int" name="senha" value="<?= htmlspecialchars($usuario['senha']) ?>"><br>
 
-    <button class="botao-editar" type="submit">Salvar</button>
-    <div class="link_voltar"><a href="painel.php">Voltar</a><div>
-</form>
-</div>
+        <button class="botao-editar" type="submit">Salvar</button>
+        <div class="link_voltar"><a href="painel.php">Voltar</a></div>
+    </form>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-logo">
+                <img src="assets/logo_seular.png" alt="Logo Seu Lar">
+                <p>&copy; <?= date("Y") ?> Seu Lar. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="sobre.php">Sobre Nós</a>
+                <a href="contato.php">Contato</a>
+                <a href="termos.php">Termos de Uso</a>
+                <a href="privacidade.php">Política de Privacidade</a>
+                <a href="logout.php">Sair</a>
+                <a href="tela-cadastro.php">Cadastre-se</a>
+                <a href="index.php">Acessar conta</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+
+    </footer>
+
 </body>
 </html>
