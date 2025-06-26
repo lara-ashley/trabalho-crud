@@ -44,16 +44,27 @@ $anuncios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div>
 
             <p>Encontre aqui um lugar para chamar de seu </p>
-            <a href="ler-imovel.php">Ver todos os imóveis</a>
             
             <?php foreach ($anuncios as $a): ?>
                 <div class="caixa-imovel">
-                    <p><?= htmlspecialchars($a['tipo']) ?> em <?= htmlspecialchars($a['cidade']) ?> - <?= htmlspecialchars($a['bairro']) ?></p>
-                    <p>Valor: R$ <?= number_format($a['valor'], 2, ',', '.') ?></p>
+
+                    <p>
+                        <?= htmlspecialchars($a['tipo']) ?> - Cidade: 
+                        <?= htmlspecialchars($a['cidade']) ?> 
+                        - Bairro: <?= htmlspecialchars($a['bairro']) ?>
+                    </p>
+                    <p> 
+                        Valor: R$ <?= number_format($a['valor'], 2, ',', '.') ?> 
+                        - Cômodos possui: <?= htmlspecialchars($a['comodos']) ?> 
+                    </p>
+                    <p>
+                        Metragem: <?= htmlspecialchars($a['metragem']) ?> 
+                        - Matricula do cartório: <?= htmlspecialchars($a['matricula']) ?>
+                    </p>
 
                     <?php if (isset($_SESSION['id']) && $_SESSION['id'] == $a['id_usuario']): ?>
-                        <div class = "caixa-link-imovel"><a class = "link" href="editar-imovel.php?id=<?= $a['id'] ?>">Editar</a>
-                        <a class = "link" href="excluir-imovel.php?id=<?= $a['id'] ?>" onclick="return confirm('Deseja excluir este anúncio?')">Excluir</a></div>
+                        <div class = "caixa-link-imovel"><a class = "link" href="editar-imovel.php?id=<?= $a['id'] ?>"><p>Editar</p></a>
+                        <a class = "link" href="excluir-imovel.php?id=<?= $a['id'] ?>" onclick="return confirm('Deseja excluir este anúncio?')"><p>Excluir</p></a></div>
                     <?php endif; ?>
                 </div>
 
