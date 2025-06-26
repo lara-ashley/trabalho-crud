@@ -1,3 +1,7 @@
+<?php
+include("protecao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,6 +24,10 @@
         <img class="menu" src="assets/menu" alt="Menu">
         
     </section>
+
+    <div class="caixa-painel">
+        <p>Busque aqui um lugar para chamar de seu </p>
+    </div>
 
     <footer class="footer">
             <div class="container-footer">
