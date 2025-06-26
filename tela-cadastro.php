@@ -1,4 +1,9 @@
-<?php include ("cadastro.php");?>
+<?php include ("cadastro.php");
+include("protecao.php");
+
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="pt-br">
