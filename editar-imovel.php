@@ -1,7 +1,6 @@
 <?php
 include("protecao.php");
 include("conexao.php");
-
 $id = $_GET['id'] ?? null;
 
 if (!$id) {
@@ -41,9 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id
     ]);
 
-    header("Location: painel.php.php?msg=editado");
+    header("Location: painel.php?msg=editado");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -55,9 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 
 </head>
-<body class ="main-editar-imovel">
+<body class ="main-imovel">
 
- <section class="navbar">
+    <section class="navbar">
 
         <a class="link" href="painel.php">Ínicio</a>
         <a class="link" href="imoveis.php">Compra</a>
@@ -69,31 +69,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <form class="editar-imovel" method="post">
+        <?php if (isset($msg)) { echo "<p class=\"echo\">$msg</p>"; } ?>
+        <div>
         <label>Nome do proprietário</label>
         <input class = "input-editar-imovel" type="text" name="nome" value="<?= htmlspecialchars($anuncio['nome']) ?>">
+        </div>
 
+        <div>
         <label>Tipo do imóvel</label>
         <input class = "input-editar-imovel" type="text" name="tipo" value="<?= htmlspecialchars($anuncio['tipo']) ?>">
+        </div>
 
+        <div>
         <label>Cidade</label>
-        <input class = "input-editar-imovel" type="text" name="cidade" value="<?= htmlspecialchars($anuncio['cidade']) ?>"><br>
+        <input class = "input-editar-imovel" type="text" name="cidade" value="<?= htmlspecialchars($anuncio['cidade']) ?>">
+        </div>
 
+        <div>
         <label>Bairro</label>
-        <input class = "input-editar-imovel" type="text" name="bairro" value="<?= htmlspecialchars($anuncio['bairro']) ?>"><br>
+        <input class = "input-editar-imovel" type="text" name="bairro" value="<?= htmlspecialchars($anuncio['bairro']) ?>">
+        </div>
 
+        <div>
         <label>Número de cômodos</label>
-        <input class = "input-editar-imovel" type="number" name="comodos" value="<?= htmlspecialchars($anuncio['comodos']) ?>"><br>
+        <input class = "input-editar-imovel" type="number" name="comodos" value="<?= htmlspecialchars($anuncio['comodos']) ?>">
+        </div>
 
+        <div>
         <label>Matrícula do cartório</label>
-        <input class = "input-editar-imovel" type="text" name="matricula" value="<?= htmlspecialchars($anuncio['matricula']) ?>"><br>
+        <input class = "input-editar-imovel" type="text" name="matricula" value="<?= htmlspecialchars($anuncio['matricula']) ?>">
+        </div>
 
+
+        <div>
         <label>Metragem do imóvel</label>
-        <input class = "input-editar-imovel" type="number" step="0.01" name="metragem" value="<?= htmlspecialchars($anuncio['metragem']) ?>"><br>
+        <input class = "input-editar-imovel" type="number" step="0.01" name="metragem" value="<?= htmlspecialchars($anuncio['metragem']) ?>">
+        </div>
 
+        <div>
         <label>Valor do imóvel</label>
-        <input class = "input-editar-imovel" type="number" step="0.01" name="valor" value="<?= htmlspecialchars($anuncio['valor']) ?>"><br>
+        <input class = "input-editar-imovel" type="number" step="0.01" name="valor" value="<?= htmlspecialchars($anuncio['valor']) ?>">
+        </div>
 
-        <button class = "botao-editar-imovel" type="submit">Salvar alterações</button>
+        <div class = "div-botao-editar" >
+            <button class = "botao-editar-imovel" type="submit">Salvar alterações</button>
+        </div>
     </form>
 
     
