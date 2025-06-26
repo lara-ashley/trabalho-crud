@@ -5,6 +5,7 @@
   font-family: 'Lilita One', cursive;
 }
 
+
 .echo{
   color: #F1D7FF;
 }
@@ -244,14 +245,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 12px;
+  font-size: 20px;
 }
 
 
 .caixa-imovel{
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #062863;
-    padding: 2px;
-    margin: 20px;    
+    padding: 10px;
+    margin: 20px;   
+    font-size: 20px; 
 }
 
 .caixa-link-imovel{
@@ -266,12 +270,16 @@
     padding: 20px;
     color: #F1D7FF;
     text-align: center;
+    height: 65vh;
 }
 
 .container-footer {
     display: flex;
     justify-content: space-between;
     flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
 }
 
 .footer-logo {
@@ -291,7 +299,6 @@
     flex: 1 1 200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .footer-links a,
@@ -299,7 +306,7 @@
     margin: 6px 0;
     color: #F1D7FF;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .footer-links a:hover,
@@ -361,15 +368,27 @@
 
 /*Página de compra*/
 
-.main-comprar{
+.main-compra{
   background-color: #062863;
 }
+
+.main-compra p {
+  font-size: 20px;
+  padding: 50px;
+}
+
+
 
 
 /*Página de busca*/
 
 .main-buscar{
   background-color: #062863;
+}
+
+.main-buscar p {
+  font-size: 20px;
+  padding: 50px;
 }
 
 /*Página conta*/
@@ -379,16 +398,16 @@
 }
 
 .tabela, th, td{
-    border-collapse: collapse;
     padding: 10px;
     text-align: left;
     color: #F1D7FF;
     border: 1px solid #3454b4;
     background-color: #607EC9;
+    font-size: 30px;
 }
 
+
 .tabela-conta{
-  border-radius: 12px;
   margin: 40px 12px;
   display: flex;
   justify-content: center;
@@ -457,62 +476,60 @@
 
 /*pagina editar imovel*/
 
-
-.main-editar-imovel {
+.main-imovel{
   background-color: #062863;
-  border-radius: 12px;
-  border: 2px solid #062863;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin: auto;
 }
 
-.editar-imovel {
-  background-color: #062863;
-  color: #F1D7FF;
-  border-radius: 40px;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-
-.editar-imovel form{
+.main-imovel form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background-color: #607EC9;
-  padding: 12px;
   border-radius: 20px;
-  width: 300px;
+  margin: 12px;
 }
 
-.input-editar-imovel{
-  border: 4px solid #062863;
+.editar-imovel  {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background-color: #607EC9;
-  padding: px;
-  border-radius: 15px;
-  font-size: 1rem;
-  outline: none;
-  margin: 8px;
-  padding: 4px;
-  color: #062863;
+  border-radius: 20px;
+  margin: 12px;
+  padding: 10px;
+  flex-wrap: wrap;
+  min-width: 30px;
+
 }
 
+.editar-imovel label {
+  color: #F1D7FF;
+  font-size: 20px;
+}
+
+.input-editar-imovel {
+  padding: 10px;
+  width: 30vw ;
+  border-radius: 12px;
+  border: 3px solid #062863;
+  background-color: #607EC9;
+  color: #062863;
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  justify-content: space-between;
+  font-size: 20px;
+}
 
 .botao-editar-imovel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6px;
-    margin: 6px;
-    background-color: #3454b4;
-    color: #F1D7FF;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    border: 4px solid #062863;
-    min-width: 4vw;
-    height: 5vh;
-}   
+  padding: 6px;
+  margin: 28px;
+  background-color: #3454b4;
+  color: #F1D7FF;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 4px solid #062863;
+  min-width: 4vw;
+  height: 5vh;
+}
 
 
